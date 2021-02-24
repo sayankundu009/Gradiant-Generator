@@ -1,2 +1,2 @@
-# gradiant-generator
-simple gradient generator 
+# Gradiant-generator
+A simple gradient generator 
