@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Sayan Kundu">
@@ -9,46 +8,35 @@
   <title>index</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <div>
     <center>
       <br><br><br><br><br>
       <h1>Gradient Generator</h1>
       <h2>Pick your colors</h2>
-      <input type="color"  id="color1" name="color1" value="#33ccff">
-      <input type="color"  id="color2" name="color2" value="#ff99cc"><br><br>
+      <input type="color"  id="colorOne" name="colorOne" value="#33ccff">
+      <input type="color"  id="colorTwo" name="colorTwo" value="#ff99cc"><br><br>
       <input type="range"  id="degree" class="slider" name="degree" value=180 min="0" max="360">
       <br><br>
       <h1 id="text"></h1>
-
     </center>
-
   </div>
 
-
   <script>
-    var color1 = document.getElementById('color1');
-    var color2 = document.getElementById('color2');
-    var degree = document.getElementById('degree');
-    var background = document.querySelector('div');
-    var n;
+    const colorOne = document.getElementById('colorOne');
+    const colorTwo = document.getElementById('colorTwo');
+    const degree = document.getElementById('degree');
+    const background = document.querySelector('div');
+    let cssText;
 
     function change_color() {
-
-      background.style.background = " linear-gradient(" + degree.value + "deg," + color1.value + " 0%," + color2.value + " 100%)";
-      n = background.style.background;
-      document.getElementById('text').innerHTML = "background:" + n;
-
-
+      background.style.background = "linear-gradient(" + degree.value + "deg," + colorOne.value + " 0%," + colorTwo.value + " 100%)";
+      cssText = background.style.background;
+      document.getElementById('text').innerHTML = "background:" + cssText;
     }
-    color1.addEventListener("input", change_color);
-    color2.addEventListener("input", change_color);
+    colorOne.addEventListener("input", change_color);
+    colorTwo.addEventListener("input", change_color);
     degree.addEventListener("input", change_color);
-
-
   </script>
-
 </body>
-
 </html>
